@@ -28,7 +28,7 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/home":
+      case "/post":
         title = "";
         metaDescription = "";
         break;
@@ -50,8 +50,8 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Post />} />
-      <Route path="/home" element={<Home />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/post" element={<Post />} />
     </Routes>
   );
 }
