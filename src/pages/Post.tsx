@@ -1,18 +1,25 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./Post.module.css";
 
 const Post: FunctionComponent = () => {
+  const navigate = useNavigate();
+
+  const onLogoClick = useCallback(() => {
+    navigate("/home");
+  }, [navigate]);
+
   return (
     <div className={styles.post}>
       <div className={styles.header}>
-        <div className={styles.logo}>
+        <button className={styles.logo} onClick={onLogoClick}>
           <div className={styles.name}>
-            <b className={styles.bootstrap}>Bootstrap</b>
+            <b className={styles.bootstrap}>Guchitter</b>
           </div>
           <div className={styles.ui}>
             <div className={styles.ui1}>UI</div>
           </div>
-        </div>
+        </button>
         <b className={styles.designSystem}>Design System</b>
       </div>
       <div className={styles.textarea}>

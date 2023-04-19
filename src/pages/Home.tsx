@@ -41,14 +41,14 @@ const Home: FunctionComponent = () => {
   return (
     <div className={styles.home} data-animate-on-scroll>
       <header className={styles.header}>
-        <div className={styles.logo}>
+        <button className={styles.logo}>
           <div className={styles.name}>
-            <b className={styles.bootstrap}>Bootstrap</b>
+            <b className={styles.bootstrap}>Guchitter</b>
           </div>
           <div className={styles.ui}>
             <div className={styles.ui1}>UI</div>
           </div>
-        </div>
+        </button>
         <b className={styles.designSystem}>Design System</b>
       </header>
       <article className={styles.cardbody}>
