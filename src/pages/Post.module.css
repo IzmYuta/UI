@@ -1,6 +1,10 @@
 .bootstrap {
   position: relative;
+  font-size: var(--font-size-4xl);
   letter-spacing: -0.03em;
+  font-family: var(--font-inter);
+  color: var(--default-white);
+  text-align: left;
 }
 .name {
   display: flex;
@@ -10,7 +14,11 @@
 }
 .ui1 {
   position: relative;
+  font-size: var(--font-size-3xs);
   font-weight: 800;
+  font-family: var(--font-inter);
+  color: var(--default-white);
+  text-align: left;
 }
 .logo,
 .ui {
@@ -23,15 +31,17 @@
   border: 1px solid var(--default-white);
   flex-direction: column;
   padding: var(--padding-11xs) var(--padding-10xs);
-  font-size: var(--font-size-3xs);
 }
 .logo {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
   flex-direction: row;
   gap: var(--gap-9xs);
 }
 .designSystem {
   position: relative;
-  font-size: var(--font-size-xs);
   letter-spacing: -0.02em;
 }
 .header {
@@ -117,7 +127,7 @@
   height: 64rem;
   overflow: hidden;
   text-align: left;
-  font-size: var(--font-size-4xl);
+  font-size: var(--font-size-xs);
   color: var(--default-white);
   font-family: var(--font-inter);
 }
