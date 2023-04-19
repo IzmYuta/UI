@@ -1,0 +1,123 @@
+.bootstrap {
+  position: relative;
+  letter-spacing: -0.03em;
+}
+.name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.ui1 {
+  position: relative;
+  font-weight: 800;
+}
+.logo,
+.ui {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.ui {
+  border-radius: var(--br-9xs);
+  border: 1px solid var(--default-white);
+  flex-direction: column;
+  padding: var(--padding-11xs) var(--padding-10xs);
+  font-size: var(--font-size-3xs);
+}
+.logo {
+  flex-direction: row;
+  gap: var(--gap-9xs);
+}
+.designSystem {
+  position: relative;
+  font-size: var(--font-size-xs);
+  letter-spacing: -0.02em;
+}
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  width: 90rem;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-7xs) var(--padding-147xl);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+}
+.label {
+  position: relative;
+  line-height: 4.42rem;
+  display: none;
+}
+.content {
+  border: 3.5px solid var(--gray-300);
+  background-color: var(--default-white);
+  border-radius: 21.2px;
+  box-sizing: border-box;
+  width: 54.78rem;
+  height: 25.18rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  padding: 3.53rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.helpText {
+  align-self: stretch;
+  position: relative;
+  font-size: 2.65rem;
+  line-height: 2.65rem;
+  color: var(--gray-500);
+  display: none;
+}
+.textarea {
+  position: absolute;
+  top: 6.63rem;
+  left: 9.5rem;
+  box-shadow: 0 14.136125564575195px 14.14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1.33rem;
+  font-size: 3.53rem;
+  color: #000;
+}
+.button1 {
+  position: relative;
+  font-size: var(--font-size-6xl-6);
+  line-height: 1.8rem;
+  font-weight: 600;
+  font-family: var(--font-inter);
+  color: var(--default-white);
+  text-align: left;
+}
+.button {
+  cursor: pointer;
+  border: 0;
+  padding: 1.6rem 2.4rem;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 36.13rem;
+  left: 9.5rem;
+  border-radius: var(--br-3xs-6);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.post {
+  position: relative;
+  background-color: var(--default-white);
+  width: 100%;
+  height: 64rem;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-4xl);
+  color: var(--default-white);
+  font-family: var(--font-inter);
+}
