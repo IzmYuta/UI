@@ -64,7 +64,7 @@
 }
 .content {
   border: 3.5px solid var(--gray-300);
-  background-color: var(--default-white);
+  background-color: rgba(255, 255, 255, 0);
   border-radius: 21.2px;
   box-sizing: border-box;
   width: 54.78rem;
@@ -89,6 +89,7 @@
   top: 6.63rem;
   left: 9.5rem;
   box-shadow: 0 14.136125564575195px 14.14px rgba(0, 0, 0, 0.25);
+  border-radius: 21.2px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -130,4 +131,5 @@
   font-size: var(--font-size-xs);
   color: var(--default-white);
   font-family: var(--font-inter);
+  /* display: none; */
 }
