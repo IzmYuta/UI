@@ -35,7 +35,7 @@ const Home: FunctionComponent = () => {
   }, []);
 
   const onButtonClick = useCallback(() => {
-    navigate("/");
+    navigate("/post");
   }, [navigate]);
 
   return (
@@ -45,11 +45,11 @@ const Home: FunctionComponent = () => {
           <div className={styles.name}>
             <b className={styles.bootstrap}>Guchitter</b>
           </div>
-          <div className={styles.ui}>
+          {/* <div className={styles.ui}>
             <div className={styles.ui1}>UI</div>
-          </div>
+          </div> */}
         </button>
-        <b className={styles.designSystem}>Design System</b>
+        <b className={styles.designSystem}></b>
       </header>
       <article className={styles.cardbody}>
         <p className={styles.allTheLorem}>
@@ -80,7 +80,7 @@ const Home: FunctionComponent = () => {
         </p>
       </article>
       <button className={styles.button} autoFocus onClick={onButtonClick}>
-        <div className={styles.button1}>Button</div>
+        <div className={styles.button1}>愚痴る！！</div>
       </button>
       <img className={styles.pencilFillIcon} alt="" src="/pencilfill.svg" />
     </div>

@@ -6,7 +6,7 @@ const Post: FunctionComponent = () => {
   const navigate = useNavigate();
 
   const onLogoClick = useCallback(() => {
-    navigate("/home");
+    navigate("/");
   }, [navigate]);
 
   return (
@@ -16,11 +16,11 @@ const Post: FunctionComponent = () => {
           <div className={styles.name}>
             <b className={styles.bootstrap}>Guchitter</b>
           </div>
-          <div className={styles.ui}>
-            <div className={styles.ui1}>UI</div>
-          </div>
+          {/* <div className={styles.ui}>
+            <div className={styles.ui1}></div>
+          </div> */}
         </button>
-        <b className={styles.designSystem}>Design System</b>
+        <b className={styles.designSystem}></b>
       </div>
       <div className={styles.textarea}>
         <div className={styles.label}>Label</div>
@@ -28,7 +28,7 @@ const Post: FunctionComponent = () => {
         <div className={styles.helpText}>Help Text</div>
       </div>
       <button className={styles.button}>
-        <div className={styles.button1}>Button</div>
+        <div className={styles.button1}>投稿する！！</div>
       </button>
     </div>
   );

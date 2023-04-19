@@ -150,12 +150,13 @@
   top: 55.88rem;
   left: 62.06rem;
   border-radius: var(--br-3xs-6);
-  width: 13.38rem;
+  width: 16rem;
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
   align-items: center;
   justify-content: flex-start;
+  white-space: nowrap;
 }
 .pencilFillIcon {
   position: absolute;
@@ -163,6 +164,7 @@
   left: 64.3rem;
   width: 2.59rem;
   height: 2.75rem;
+  pointer-events: none;
 }
 .home {
   position: relative;
