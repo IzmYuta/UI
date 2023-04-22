@@ -77,13 +77,13 @@
   position: relative;
   line-height: 2.29rem;
 }
-.cardbody {
+.cardbody0 {
   top: 4.75rem;
   height: 10.81rem;
   text-align: left;
   font-family: var(--font-inter);
 }
-.cardbody,
+.cardbody0,
 .cardbody1,
 .cardbody2 {
   position: absolute;

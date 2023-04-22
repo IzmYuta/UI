@@ -1,13 +1,41 @@
-import { FunctionComponent, useCallback } from "react";
+import { FunctionComponent, useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import styles from "./Post.module.css";
+
+interface IPostData {
+  body: string;
+}
 
 const Post: FunctionComponent = () => {
   const navigate = useNavigate();
+  const [body, setBody] = useState("");
+
+  const handleTextareaChange = useCallback(
+    (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+      setBody(event.target.value);
+    },
+    []
+  );
 
   const onLogoClick = useCallback(() => {
     navigate("/");
   }, [navigate]);
+
+  const handleSubmit = useCallback(() => {
+    const postData: IPostData = {
+      body,
+    };
+
+    axios.post("http://localhost:8000/api/post", postData)
+    .then((response) => {
+      console.log(response.data);
+      navigate("/");
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  }, [body,navigate]);
 
   return (
     <div className={styles.post}>
@@ -16,22 +44,22 @@ const Post: FunctionComponent = () => {
           <div className={styles.name}>
             <b className={styles.bootstrap}>Guchitter</b>
           </div>
-          {/* <div className={styles.ui}>
-            <div className={styles.ui1}></div>
-          </div> */}
         </button>
         <b className={styles.designSystem}></b>
       </div>
       <div className={styles.textarea}>
         <div className={styles.label}>Label</div>
-        <textarea className={styles.content} placeholder="愚痴を書け！！" />
+        <textarea
+          className={styles.content}
+          placeholder="愚痴を書け！！"
+          onChange={handleTextareaChange}
+        />
         <div className={styles.helpText}>Help Text</div>
       </div>
-      <button className={styles.button}>
+      <button className={styles.button} onClick={handleSubmit}>
         <div className={styles.button1}>投稿する！！</div>
       </button>
     </div>
   );
 };
-
 export default Post;
