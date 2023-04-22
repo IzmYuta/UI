@@ -27,7 +27,7 @@ const Post: FunctionComponent = () => {
       body,
     };
 
-    axios.post("http://localhost:8000/api/post", postData)
+    axios.post("https://guchitter-production.up.railway.app/api/post", postData)
     .then((response) => {
       console.log(response.data);
       navigate("/");

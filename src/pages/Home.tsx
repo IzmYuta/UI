@@ -43,7 +43,7 @@ const Home: FunctionComponent = () => {
   const [data, setData] = useState<Data[]>([]);
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/api/home");
+      const response = await axios.get("https://guchitter-production.up.railway.app/api/home");
       setData(response.data);
     } catch (error) {
       console.log(error);
