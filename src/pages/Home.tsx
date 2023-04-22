@@ -1,6 +1,12 @@
-import { FunctionComponent, useCallback, useEffect } from "react";
+import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import styles from "./Home.module.css";
+
+interface Data {
+  body: string;
+  id: number;
+}
 
 const Home: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -22,34 +28,47 @@ const Home: FunctionComponent = () => {
         threshold: 0.15,
       }
     );
-
+  
     for (let i = 0; i < scrollAnimElements.length; i++) {
       observer.observe(scrollAnimElements[i]);
     }
-
+  
     return () => {
       for (let i = 0; i < scrollAnimElements.length; i++) {
         observer.unobserve(scrollAnimElements[i]);
       }
     };
   }, []);
+  
+  const [data, setData] = useState<Data[]>([]);
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("http://localhost:8000/api/home");
+      setData(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
+  useEffect(() => {
+    fetchData();
+  }, []);
+  console.log(data)
 
   const onButtonClick = useCallback(() => {
     navigate("/post");
   }, [navigate]);
 
-  const cardBodies = [];
-  for (let i = 0; i < 4; i++) {
-    cardBodies.push(
-      <article className={styles[`cardbody${i}`]}>
+  const cardBodies = data.map((item, index) => {
+    return (
+      <article className={styles[`cardbody${index}`]}>
         <p className={styles.allTheLorem}>
-          All the Lorem Ipsum generators on the Internet tend to repeat
-          predefined chunks as necessary, making this the first true generator
-          on the Internet.
+          {item.body}
         </p>
       </article>
     );
-  }
+  });
+  
 
   return (
     <div className={styles.home} data-animate-on-scroll>
@@ -58,9 +77,6 @@ const Home: FunctionComponent = () => {
           <div className={styles.name}>
             <b className={styles.bootstrap}>Guchitter</b>
           </div>
-          {/* <div className={styles.ui}>
-            <div className={styles.ui1}>UI</div>
-          </div> */}
         </button>
         <b className={styles.designSystem}></b>
       </header>
@@ -74,3 +90,4 @@ const Home: FunctionComponent = () => {
 };
 
 export default Home;
+
