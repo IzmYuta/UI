@@ -1,5 +1,6 @@
 import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import https from "https";
 import axios from "axios";
 import styles from "./Home.module.css";
 
@@ -7,8 +8,12 @@ interface Data {
   body: string;
   id: number;
 }
+const agent = new https.Agent({
+  rejectUnauthorized: false,
+});
 const instanse = axios.create({
   baseURL: "https://guchitter-production.up.railway.app/api",
+  httpsAgent: agent,
   headers: {
     "Content-Type": "application/json",
     'X-Requested-With': 'XMLHttpRequest',
