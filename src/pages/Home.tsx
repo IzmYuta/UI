@@ -11,6 +11,7 @@ const instanse = axios.create({
   baseURL: "https://guchitter-production.up.railway.app/api",
   headers: {
     "Content-Type": "application/json",
+    'X-Requested-With': 'XMLHttpRequest',
   },
 });
 
