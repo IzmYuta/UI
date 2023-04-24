@@ -6,6 +6,12 @@ import styles from "./Post.module.css";
 interface IPostData {
   body: string;
 }
+const instanse = axios.create({
+  baseURL: "https://guchitter-production.up.railway.app/api",
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
 
 const Post: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -27,7 +33,7 @@ const Post: FunctionComponent = () => {
       body,
     };
 
-    axios.post("https://guchitter-production.up.railway.app/api/post", postData)
+    instanse.post("/post", postData)
     .then((response) => {
       console.log(response.data);
       navigate("/");

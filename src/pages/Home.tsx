@@ -7,6 +7,12 @@ interface Data {
   body: string;
   id: number;
 }
+const instanse = axios.create({
+  baseURL: "https://guchitter-production.up.railway.app/api",
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
 
 const Home: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -43,7 +49,7 @@ const Home: FunctionComponent = () => {
   const [data, setData] = useState<Data[]>([]);
   const fetchData = async () => {
     try {
-      const response = await axios.get("https://guchitter-production.up.railway.app/api/home");
+      const response = await instanse.get("/home");
       setData(response.data);
     } catch (error) {
       console.log(error);
