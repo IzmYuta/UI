@@ -1,13 +1,17 @@
 import { FunctionComponent, useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import axios from "axios";
 import styles from "./Post.module.css";
+
 
 interface IPostData {
   body: string;
 }
+
 const instanse = axios.create({
   baseURL: "https://guchitter-production.up.railway.app/api",
+  // baseURL: "https://0.0.0.0:8000/api",
   headers: {
     "Content-Type": "application/json",
   },
