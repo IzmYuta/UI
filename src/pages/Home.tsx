@@ -3,12 +3,14 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import styles from "./Home.module.css";
 
+const API_BASE_URL = process.env.REACT_PUBLIC_API_BASE_URL;
+
 interface Data {
   body: string;
   id: number;
 }
 const instanse = axios.create({
-  baseURL: "https://guchitter-production.up.railway.app/api",
+  baseURL: API_BASE_URL,
   // baseURL: "https://0.0.0.0:8000/api",
   headers: {
     "Content-Type": "application/json",
