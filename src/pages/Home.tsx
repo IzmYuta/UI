@@ -4,7 +4,7 @@ import axios from "axios";
 import styles from "./Home.module.css";
 
 const API_BASE_URL = process.env.REACT_PUBLIC_API_BASE_URL;
-
+console.log(API_BASE_URL);
 interface Data {
   body: string;
   id: number;

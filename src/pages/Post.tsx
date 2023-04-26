@@ -6,6 +6,7 @@ import styles from "./Post.module.css";
 
 
 const API_BASE_URL = process.env.REACT_PUBLIC_API_BASE_URL;
+console.log(API_BASE_URL);
 interface IPostData {
   body: string;
 }
