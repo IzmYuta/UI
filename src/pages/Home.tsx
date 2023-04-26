@@ -13,8 +13,7 @@ const instanse = axios.create({
   baseURL: "https://guchitter-production.up.railway.app",
   // baseURL: "https://0.0.0.0:8000/api ",
   headers: {
-    "Content-Type": "application/json",
-    "Referrer-policy": "unsafe-url",
+    "content-type": "application/json",
   },
 });
 
