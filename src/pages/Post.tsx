@@ -5,14 +5,12 @@ import axios from "axios";
 import styles from "./Post.module.css";
 
 
-const API_BASE_URL = process.env.REACT_PUBLIC_API_BASE_URL;
-console.log(API_BASE_URL);
 interface IPostData {
   body: string;
 }
 
 const instanse = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: "https://guchitter-production.up.railway.app/api",
   // baseURL: "https://0.0.0.0:8000/api",
   headers: {
     "Content-Type": "application/json",
