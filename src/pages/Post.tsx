@@ -14,7 +14,7 @@ const instanse = axios.create({
   // baseURL: "https://0.0.0.0:8000/api",
   headers: {
     "Content-Type": "application/json",
-    "referer-policy": "unsafe-url",
+    "Referrer-policy": "unsafe-url",
   },
 });
 
