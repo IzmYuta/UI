@@ -11,7 +11,7 @@ interface Data {
 }
 const instanse = axios.create({
   baseURL: "https://guchitter-production.up.railway.app/api",
-  // baseURL: "https://0.0.0.0:8000/api",
+  // baseURL: "https://0.0.0.0:8000/api ",
   headers: {
     "Content-Type": "application/json",
     "referer-policy": "unsafe-url",
