@@ -52,7 +52,7 @@ const Home: FunctionComponent = () => {
   const [data, setData] = useState<Data[]>([]);
   const fetchData = async () => {
     try {
-      const response = await instanse.get("/api/home");
+      const response = await instanse.get("/api/home/");
       setData(response.data);
     } catch (error) {
       console.log(error);
