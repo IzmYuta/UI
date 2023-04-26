@@ -10,7 +10,7 @@ interface Data {
   id: number;
 }
 const instanse = axios.create({
-  baseURL: "https://guchitter-production.up.railway.app/api",
+  baseURL: "https://guchitter-production.up.railway.app",
   // baseURL: "https://0.0.0.0:8000/api ",
   headers: {
     "Content-Type": "application/json",
@@ -53,7 +53,7 @@ const Home: FunctionComponent = () => {
   const [data, setData] = useState<Data[]>([]);
   const fetchData = async () => {
     try {
-      const response = await instanse.get("/home");
+      const response = await instanse.get("/api/home");
       setData(response.data);
     } catch (error) {
       console.log(error);
