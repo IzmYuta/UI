@@ -37,7 +37,7 @@ const Post: FunctionComponent = () => {
       body,
     };
 
-    instanse.post("/api/post/", postData)
+    instanse.post("/api/post", postData)
     .then((response) => {
       console.log(response.data);
       navigate("/");
