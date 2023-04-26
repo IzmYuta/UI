@@ -10,7 +10,7 @@ interface IPostData {
 }
 
 const instanse = axios.create({
-  baseURL: "https://guchitter-production.up.railway.app/api",
+  baseURL: "https://guchitter-production.up.railway.app",
   // baseURL: "https://0.0.0.0:8000/api",
   headers: {
     "Content-Type": "application/json",
@@ -38,7 +38,7 @@ const Post: FunctionComponent = () => {
       body,
     };
 
-    instanse.post("/post", postData)
+    instanse.post("/api/post", postData)
     .then((response) => {
       console.log(response.data);
       navigate("/");
